@@ -62,8 +62,8 @@ file_path = filedialog.askopenfilename()
 with open(file_path, 'r') as infile: #looks for the file
     input_cwd = os.path.dirname(file_path)
     with open(input_cwd + '\\' + 'r2fout_' + (os.path.basename(file_path)), 'w') as outfile: # write to second file
-        ori_string = infile.readlines()
-        for line in ori_string: # now for writing the actual file
+        ori_list = infile.readlines()
+        for line in ori_list: # now for writing the actual file
             line = line.replace('  ', '    ') # evens out the spacing for splitting purposes
             line = re.split('    ', line) # splits line
             init_seq = line[3] # pick line 3, this should be the DNA sequence, because for whatever reason DNA is that line

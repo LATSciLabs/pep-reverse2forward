@@ -50,8 +50,6 @@ def translate(forSeq, outfile):
         for i in range(0, len(forSeq), 3):
             codon = forSeq[i:i + 3]
             protein += AAtable[codon] # check table and TL to AA
-    #forSeq = forSeq[::-1] # redundant code
-    #protein = protein[::-1] # redundant code, placing sequence and peptide in correct orientation
     finalSeq_comp = ''.join([protein, "    ", line[2], "  ", forSeq, "\n"]) # put it all together, that's it
     outfile.write(finalSeq_comp) # write it
 

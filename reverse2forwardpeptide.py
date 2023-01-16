@@ -14,12 +14,14 @@ def seqTranslate(init_seq):
         print(line[0] + ", DNA:" + line[3] + ", Bases are not in triplet, culling last bases first...")
         init_seq = init_seq[:-(len(init_seq) % 3)]
         for i in range(0, len(init_seq), 1): # establish range
-            base = init_seq[i:i + 1] # go through each base by 1
-            forSeq += Fliptable[base] # flip base letter
+            if not 'N' in init_seq: # check for ambig. bases, if present, drop line and move on
+                base = init_seq[i:i + 1] # go through each base by 1
+                forSeq += Fliptable[base] # flip base letter
     elif len(init_seq) % 3 == 0:
         for i in range(0, len(init_seq), 1): # establish range
-            base = init_seq[i:i + 1] # go through each base by 1
-            forSeq += Fliptable[base] # flip base letter
+            if not 'N' in init_seq: # check for ambig. bases, if present, drop line and move on
+                base = init_seq[i:i + 1] # go through each base by 1
+                forSeq += Fliptable[base] # flip base letter
     return forSeq
 
 def translate(forSeq, outfile): 

@@ -4,7 +4,7 @@ previously would be seemingly disregarded despite slight differences in read cou
 
 Initially Created on Mon Apr 11 16:01:02 2022
 
-Last Updated: 07/11/2022
+Last Updated: 16/01/2023
 
 "Reverse Read TL"
 >Take reverse read from phage library sequencing (after Step2 of Rebollo scripts)
